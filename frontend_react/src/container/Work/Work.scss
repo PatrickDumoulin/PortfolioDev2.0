@@ -7,28 +7,25 @@
 .app__work-filter {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
-    margin: 4rem 0 2rem;
+    margin: 2rem 0 2rem;
 
     .app__work-filter-item {
         padding: 0.5rem 1rem;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.05);
         color: #fff;
-        font-weight: 800;
+        font-weight: 500;
         cursor: pointer;
         transition: all 0.3s ease;
         margin: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
 
         &:hover {
-            background: linear-gradient(135deg, rgba(138, 127, 255, 0.6) 0%, rgba(138, 127, 255, 0.4) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(138, 127, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         @media screen and (min-width: 2000px) {
@@ -39,8 +36,12 @@
     }
 
     .item-active {
-        background: linear-gradient(135deg, rgba(138, 127, 255, 0.4) 0%, rgba(138, 127, 255, 0.2) 100%);
-        border: 1px solid rgba(138, 127, 255, 0.2);
+        background-color: var(--secondary-color);
+        color: #fff;
+        
+        &:hover {
+            background-color: var(--secondary-color);
+        }
     }
         
 }
