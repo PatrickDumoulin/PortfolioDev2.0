@@ -86,7 +86,8 @@ const abouts = [
       "After Effects",
       "Figma",
       "Blender",
-      "Ableton Live"
+      "Ableton Live",
+      "Office 365"
     ],
     imgUrl: images.DALLE_Creative
   },

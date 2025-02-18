@@ -1,34 +1,74 @@
 import React, { useState } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
 import "./Work.scss";
 import { images } from "../../constants";
-import DALLE_Mobile from "../../assets/DALLE_Mobile.png";
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 
 const projects = [
   {
     title: "ACEF De Québec",
-    description: "ASP-NET",
-    imgUrl: DALLE_Mobile,
-    projectLink: "https://project1-link.com",
-    codeLink: "https://github.com/your-username/project1",
-    category: "Projets Clients"
+    description: "Application de gestion budgétaire",
+    imgUrl: images.acef,
+    projectLink: "/acef",
+    codeLink: "https://github.com/yourusername/acef",
+    category: "Client Projects",
+    tech: "ASP.NET"
   },
   {
-    title: "Project 2",
-    description: "Description of Project 2",
-    imgUrl: "/path/to/your/image2.jpg",
-    projectLink: "https://project2-link.com",
-    codeLink: "https://github.com/your-username/project2",
-    category: "Projets Perso"
+    title: "SpaceGame",
+    description: "Un jeu spatial développé avec Unity",
+    imgUrl: images.spacegame,
+    projectLink: "/spacegame",
+    codeLink: "https://github.com/yourusername/spacegame",
+    category: "Personal Projects",
+    tech: "Unity"
   },
+  {
+    title: "BulkyBook",
+    description: "Application de gestion de livres",
+    imgUrl: images.bulkybook,
+    projectLink: "/bulkybook",
+    codeLink: "https://github.com/yourusername/bulkybook",
+    category: "Personal Projects",
+    tech: "ASP.NET"
+  },
+  {
+    title: "ModernRecruit",
+    description: "Plateforme de recrutement moderne",
+    imgUrl: images.modernRecruit,
+    projectLink: "/modernrecruit",
+    codeLink: "https://github.com/yourusername/modernrecruit",
+    category: "Personal Projects",
+    tech: "ASP.NET"
+  },
+  {
+    title: "Animal Species",
+    description: "Application d'analyse prédictive",
+    imgUrl: images.AnimalSpecies,
+    projectLink: "/asc",
+    codeLink: "https://github.com/yourusername/asc",
+    category: "Personal Projects",
+    tech: "ML.NET + React"
+  },
+  {
+    title: "My Portfolio",
+    description: "Mon portfolio personnel",
+    imgUrl: images.portfolio,
+    projectLink: "/portfolio",
+    codeLink: "https://github.com/yourusername/portfolio",
+    category: "Personal Projects",
+    tech: "React"
+  },
+  
 ];
 
 const Work = () => {
-  const [activeFilter, setActiveFilter] = useState('Tous');
+  const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filteredProjects, setFilteredProjects] = useState(projects);
+  const navigate = useNavigate();
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -37,12 +77,18 @@ const Work = () => {
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
       
-      if (item === 'Tous') {
+      if (item === 'All') {
         setFilteredProjects(projects);
       } else {
         setFilteredProjects(projects.filter((project) => project.category === item));
       }
     }, 500);
+  };
+
+  const handleProjectClick = (projectLink) => {
+    if (projectLink) {
+      navigate(projectLink);
+    }
   };
 
   return (
@@ -52,7 +98,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["Tous", "Projets Clients", "Projets Perso"].map(
+        {["All", "Client Projects", "Personal Projects"].map(
           (item, index) => (
             <div
               key={index}
@@ -71,7 +117,12 @@ const Work = () => {
         className="app__work-portfolio"
       >
         {filteredProjects.map((project, index) => (
-          <div className="app__work-item app__flex" key={index}>
+          <div 
+            className="app__work-item app__flex" 
+            key={index}
+            onClick={() => handleProjectClick(project.projectLink)}
+            style={{ cursor: 'pointer' }}
+          >
             <div className="app__work-img app__flex">
               <img src={project.imgUrl} alt={project.title} />
 
@@ -90,22 +141,13 @@ const Work = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
-                <a href={project.codeLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
               </motion.div>
             </div>
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{project.title}</h4>
               <p className="p-text" style={{ marginTop: 10 }}>{project.description}</p>
+              <p className="tech-text">{project.tech}</p>
               <div className="app__work-tag app__flex">
                 <p className="p-text">{project.category}</p>
               </div>

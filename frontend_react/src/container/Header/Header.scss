@@ -27,13 +27,27 @@
 }
 
 .app__header {
+  flex: 1;
   width: 100%;
-  min-height: 100vh;
-  padding: 6rem 2rem 2rem;
+  height: 100%;
+  flex-direction: row;
+  padding: 8rem 2rem 0rem;
   background: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 2000px) {
+    padding-top: 10rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 8rem 1rem 2rem;
+  }
 }
 
 .app__header-content {
@@ -154,34 +168,28 @@
     }
   }
 
-  .app__header-circles {
-    margin-top: 0;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
+  .app__header-bio {
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 600px;
+    padding: 1.5rem;
+    background: rgba(71, 64, 190, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 64, 190, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-    div {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: rgba(71, 64, 190, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(71, 64, 190, 0.3);
-      box-shadow: 0 0 15px rgba(71, 64, 190, 0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    p {
+      color: var(--lightGray-color);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
 
-      img {
-        width: 55%;
-        height: 55%;
-        filter: brightness(1.3);
-      }
-
-      &:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 0 20px rgba(71, 64, 190, 0.4);
-      }
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba(71, 64, 190, 0.15);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     }
   }
 }
@@ -203,7 +211,7 @@
   .counter-value {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: #8A7FFF;
     margin-bottom: 0.5rem;
     text-shadow: 0 0 15px rgba(71, 64, 190, 0.3);
   }

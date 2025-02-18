@@ -45,6 +45,13 @@ import DALLE_Mobile from '../assets/DALLE_Mobile.png';
 
 import Maphoto from '../assets/Maphoto.jpg';
 
+import spacegame from '../assets/ThumbnailSPACEGAME.png';
+import bulkybook from '../assets/ThumbnailBULKY.png';
+import acef from '../assets/ThumbnailACEF.png';
+import modernRecruit from '../assets/ThumbnailMODERNRECRUIT.png';
+import AnimalSpecies from '../assets/ThumbnailAnimalSpeciesClassifer.png';
+
+
 export default {
   email,
   mobile,
@@ -87,4 +94,9 @@ export default {
   DALLE_Game,
   Maphoto,
   DALLE_Mobile,
+  spacegame,
+  bulkybook,
+  acef,
+  modernRecruit,
+  AnimalSpecies,
 };

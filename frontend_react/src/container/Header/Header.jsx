@@ -24,12 +24,12 @@ const stats = [
 
 const Counter = ({ value, suffix, title }) => {
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
     let start = 0;
     const end = parseInt(value.toString().substring(0, 3));
-    const incrementTime = (2000 / end);
-    
+    const incrementTime = 2000 / end;
+
     const timer = setInterval(() => {
       start += 1;
       setCount(start);
@@ -42,7 +42,8 @@ const Counter = ({ value, suffix, title }) => {
   return (
     <div className="counter-item">
       <h2 className="counter-value">
-        {count}{suffix}
+        {count}
+        {suffix}
       </h2>
       <p className="counter-title">{title}</p>
     </div>
@@ -60,29 +61,27 @@ const Header = () => {
         >
           <div className="app__header-badge">
             <div className="badge-cmp app__flex">
-              {/* <span>👋</span> */}
               <div style={{ marginLeft: 20 }}>
-                {/* <p className="p-text">Hello, I'm</p> */}
                 <h1 className="head-text">Patrick Dumoulin</h1>
               </div>
             </div>
             <div className="tag-cmp app__flex">
               <p className="p-text">FullStack Web Developer</p>
             </div>
-            
+
             <div className="profile-img">
               <img src={images.Maphoto} alt="profile" />
             </div>
 
-            <motion.div 
+            <motion.div
               whileInView={{ y: [100, 0], opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__header-stats"
             >
               {stats.map((stat, index) => (
-                <Counter 
-                  key={index} 
-                  value={stat.value} 
+                <Counter
+                  key={index}
+                  value={stat.value}
                   suffix={stat.suffix}
                   title={stat.title}
                 />
@@ -92,13 +91,14 @@ const Header = () => {
             <motion.div
               variant={scaleVariants}
               whileInView={{ opacity: [0, 1] }}
-              className="app__header-circles"
+              className="app__header-bio"
             >
-              {[images.react, images.typescript, images.sass].map((circle, index) => (
-                <div className="circle-cmp app__flex" key={`circle-${index}`}>
-                  <img src={circle} alt="circle" />
-                </div>
-              ))}
+              <p>
+                I'm Patrick, a passionate developer based in Québec City with a
+                deep love for creating innovative applications and games. In
+                addition, I'm a musician and enjoy exploring creative avenues
+                like producing music professionally.
+              </p>
             </motion.div>
           </div>
         </motion.div>
