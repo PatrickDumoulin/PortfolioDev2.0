@@ -12,16 +12,27 @@ const Navbar = () => {
   const location = useLocation();
   
   const getHref = (item) => {
+    const lowercaseItem = item.toLowerCase();
+    
+    const sectionMap = {
+      'home': 'home',
+      'expertise': 'about',
+      'work': 'work',
+      'experience': 'skills'
+    };
+
+    const section = sectionMap[lowercaseItem];
+    
     if (location.pathname !== '/') {
-      return `/#${item}`;
+      return `/#${section}`;
     }
-    return `#${item}`;
+    return `#${section}`;
   };
 
   return (
     <nav className="app__navbar">
       <ul className="app__navbar-links">
-        {["home", "about", "work", "skills", "contact"].map((item) => (
+        {["Home", "Expertise", "Work", "Experience"].map((item) => (
           <li key={`link-${item}`}>
             <a href={getHref(item)}>{item}</a>
           </li>
@@ -48,7 +59,7 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {["home", "about", "work", "skills", "contact"].map((item) => (
+              {["Home", "Expertise", "Work", "Experience"].map((item) => (
                 <li key={item}>
                   <a href={getHref(item)} onClick={() => setToggle(false)}>
                     {item}

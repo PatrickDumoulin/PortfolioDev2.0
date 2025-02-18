@@ -50,6 +50,7 @@ import bulkybook from '../assets/ThumbnailBULKY.png';
 import acef from '../assets/ThumbnailACEF.png';
 import modernRecruit from '../assets/ThumbnailMODERNRECRUIT.png';
 import AnimalSpecies from '../assets/ThumbnailAnimalSpeciesClassifer.png';
+import portfolio from '../assets/ThumbnailPortfolio.png';
 
 
 export default {
@@ -99,4 +100,5 @@ export default {
   acef,
   modernRecruit,
   AnimalSpecies,
+  portfolio,
 };

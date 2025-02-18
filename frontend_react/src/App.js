@@ -4,6 +4,11 @@ import { About, Footer, Header, Skills, Work } from './container';
 import { Navbar } from './components';
 import './App.scss';
 import Acef from './container/Work/ProjectPages/Acef';
+import SpaceGame from './container/Work/ProjectPages/SpaceGame';
+import Bulky from './container/Work/ProjectPages/Bulky';
+import ModernRecruit from './container/Work/ProjectPages/ModernRecruit';
+import AnimalSpecies from './container/Work/ProjectPages/AnimalSpecies';
+import MyPortfolio from './container/Work/ProjectPages/MyPortfolio';
 
 const MainLayout = () => (
   <div className="app">
@@ -31,7 +36,27 @@ const router = createBrowserRouter([
   {
     path: "/acef",
     element: <ProjectLayout><Acef /></ProjectLayout>,
-  }
+  },
+  {
+    path: "/spacegame",
+    element: <ProjectLayout><SpaceGame /></ProjectLayout>,
+  },
+  {
+    path: "/bulkybook",
+    element: <ProjectLayout><Bulky /></ProjectLayout>,
+  },
+  {
+    path: "/modernrecruit",
+    element: <ProjectLayout><ModernRecruit /></ProjectLayout>,
+  },
+  {
+    path: "/asc",
+    element: <ProjectLayout><AnimalSpecies /></ProjectLayout>,
+  },
+  {
+    path: "/portfolio",
+    element: <ProjectLayout><MyPortfolio /></ProjectLayout>,
+  },
 ]);
 
 const App = () => {

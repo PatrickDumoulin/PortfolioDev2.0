@@ -82,9 +82,6 @@ const Acef = () => {
             </div>
 
             <div className="app__project-buttons">
-              <a href="https://github.com/yourusername/acef" target="_blank" rel="noreferrer" className="code-button">
-                View Code
-              </a>
               <a href="/" className="back-button">
                 Back
               </a>

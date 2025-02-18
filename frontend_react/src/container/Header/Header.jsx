@@ -17,9 +17,8 @@ const scaleVariants = {
 
 const stats = [
   { title: "LANGUAGES & FRAMEWORKS", value: 10, suffix: "+" },
-  { title: "GITHUB COMMITS", value: 524, suffix: "" },
+  { title: "GITHUB COMMITS", value: 569, suffix: "" },
   { title: "FINISHED PROJECTS", value: 16, suffix: "+" },
-  { title: "SATISFIED CLIENT", value: 1, suffix: "" },
 ];
 
 const Counter = ({ value, suffix, title }) => {
