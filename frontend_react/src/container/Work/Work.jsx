@@ -2,70 +2,142 @@ import React, { useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
+import { useLanguage } from '../../context/LanguageContext';
 import "./Work.scss";
 import { images } from "../../constants";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 
+const translations = {
+  EN: {
+    title: ["My", "Projects"],
+    filters: {
+      all: "All",
+      client: "Client Projects",
+      personal: "Personal Projects"
+    },
+    projects: {
+      acef: {
+        title: "ACEF De Québec",
+        description: "Budget management application",
+        category: "Client Projects",
+      },
+      spacegame: {
+        title: "SpaceGame",
+        description: "A space game developed with Unity",
+        category: "Personal Projects",
+      },
+      bulkybook: {
+        title: "BulkyBook",
+        description: "Book management application",
+        category: "Personal Projects",
+      },
+      modernrecruit: {
+        title: "ModernRecruit",
+        description: "Modern recruitment platform",
+        category: "Personal Projects",
+      },
+      animalspecies: {
+        title: "Animal Species",
+        description: "Predictive analysis application",
+        category: "Personal Projects",
+      },
+      portfolio: {
+        title: "My Portfolio",
+        description: "My personal portfolio",
+        category: "Personal Projects",
+      }
+    }
+  },
+  FR: {
+    title: ["Mes", "Projets"],
+    filters: {
+      all: "Tous",
+      client: "Projets Clients",
+      personal: "Projets Personnels"
+    },
+    projects: {
+      acef: {
+        title: "ACEF De Québec",
+        description: "Application de gestion budgétaire",
+        category: "Projets Clients",
+      },
+      spacegame: {
+        title: "SpaceGame",
+        description: "Un jeu spatial développé avec Unity",
+        category: "Projets Personnels",
+      },
+      bulkybook: {
+        title: "BulkyBook",
+        description: "Application de gestion de livres",
+        category: "Projets Personnels",
+      },
+      modernrecruit: {
+        title: "ModernRecruit",
+        description: "Plateforme de recrutement moderne",
+        category: "Projets Personnels",
+      },
+      animalspecies: {
+        title: "Animal Species",
+        description: "Application d'analyse prédictive",
+        category: "Projets Personnels",
+      },
+      portfolio: {
+        title: "Mon Portfolio",
+        description: "Mon portfolio personnel",
+        category: "Projets Personnels",
+      }
+    }
+  }
+};
+
 const projects = [
   {
-    title: "ACEF De Québec",
-    description: "Application de gestion budgétaire",
+    key: "acef",
     imgUrl: images.acef,
     projectLink: "/acef",
     codeLink: "https://github.com/yourusername/acef",
-    category: "Client Projects",
     tech: "ASP.NET"
   },
   {
-    title: "SpaceGame",
-    description: "Un jeu spatial développé avec Unity",
+    key: "spacegame",
     imgUrl: images.spacegame,
     projectLink: "/spacegame",
     codeLink: "https://github.com/yourusername/spacegame",
-    category: "Personal Projects",
     tech: "Unity"
   },
   {
-    title: "BulkyBook",
-    description: "Application de gestion de livres",
+    key: "bulkybook",
     imgUrl: images.bulkybook,
     projectLink: "/bulkybook",
     codeLink: "https://github.com/yourusername/bulkybook",
-    category: "Personal Projects",
     tech: "ASP.NET"
   },
   {
-    title: "ModernRecruit",
-    description: "Plateforme de recrutement moderne",
+    key: "modernrecruit",
     imgUrl: images.modernRecruit,
     projectLink: "/modernrecruit",
     codeLink: "https://github.com/yourusername/modernrecruit",
-    category: "Personal Projects",
     tech: "ASP.NET"
   },
   {
-    title: "Animal Species",
-    description: "Application d'analyse prédictive",
+    key: "animalspecies",
     imgUrl: images.AnimalSpecies,
     projectLink: "/asc",
     codeLink: "https://github.com/yourusername/asc",
-    category: "Personal Projects",
     tech: "ML.NET + React"
   },
   {
-    title: "My Portfolio",
-    description: "Mon portfolio personnel",
+    key: "portfolio",
     imgUrl: images.portfolio,
     projectLink: "/portfolio",
     codeLink: "https://github.com/yourusername/portfolio",
-    category: "Personal Projects",
     tech: "React"
-  },
-  
+  }
 ];
 
 const Work = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const { language } = useLanguage();
+  const [activeFilter, setActiveFilter] = useState(translations[language].filters.all);
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const navigate = useNavigate();
@@ -77,10 +149,12 @@ const Work = () => {
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
       
-      if (item === 'All') {
+      if (item === translations[language].filters.all) {
         setFilteredProjects(projects);
       } else {
-        setFilteredProjects(projects.filter((project) => project.category === item));
+        setFilteredProjects(projects.filter((project) => 
+          translations[language].projects[project.key].category === item
+        ));
       }
     }, 500);
   };
@@ -94,16 +168,19 @@ const Work = () => {
   return (
     <>
       <h2 className="head-text">
-        My <span>Projects</span>
+        {translations[language].title[0]}{" "}
+        <span>{translations[language].title[1]}</span>
       </h2>
 
       <div className="app__work-filter">
-        {["All", "Client Projects", "Personal Projects"].map(
+        {Object.values(translations[language].filters).map(
           (item, index) => (
             <div
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
+              className={`app__work-filter-item app__flex p-text ${
+                activeFilter === item ? 'item-active' : ''
+              }`}
             >
               {item}
             </div>
@@ -124,7 +201,7 @@ const Work = () => {
             style={{ cursor: 'pointer' }}
           >
             <div className="app__work-img app__flex">
-              <img src={project.imgUrl} alt={project.title} />
+              <img src={project.imgUrl} alt={translations[language].projects[project.key].title} />
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
@@ -145,11 +222,13 @@ const Work = () => {
             </div>
 
             <div className="app__work-content app__flex">
-              <h4 className="bold-text">{project.title}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}>{project.description}</p>
+              <h4 className="bold-text">{translations[language].projects[project.key].title}</h4>
+              <p className="p-text" style={{ marginTop: 10 }}>
+                {translations[language].projects[project.key].description}
+              </p>
               <p className="tech-text">{project.tech}</p>
               <div className="app__work-tag app__flex">
-                <p className="p-text">{project.category}</p>
+                <p className="p-text">{translations[language].projects[project.key].category}</p>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { About, Footer, Header, Skills, Work } from './container';
 import { Navbar } from './components';
+import { LanguageProvider } from './context/LanguageContext';
 import './App.scss';
 import Acef from './container/Work/ProjectPages/Acef';
 import SpaceGame from './container/Work/ProjectPages/SpaceGame';
@@ -11,21 +12,25 @@ import AnimalSpecies from './container/Work/ProjectPages/AnimalSpecies';
 import MyPortfolio from './container/Work/ProjectPages/MyPortfolio';
 
 const MainLayout = () => (
-  <div className="app">
-    <Navbar />
-    <Header />
-    <About />
-    <Work />
-    <Skills />
-    <Footer />
-  </div>
+  <LanguageProvider>
+    <div className="app">
+      <Navbar />
+      <Header />
+      <About />
+      <Work />
+      <Skills />
+      <Footer />
+    </div>
+  </LanguageProvider>
 );
 
 const ProjectLayout = ({ children }) => (
-  <div className="app">
-    <Navbar />
-    {children}
-  </div>
+  <LanguageProvider>
+    <div className="app">
+      <Navbar />
+      {children}
+    </div>
+  </LanguageProvider>
 );
 
 const router = createBrowserRouter([

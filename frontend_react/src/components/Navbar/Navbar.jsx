@@ -4,13 +4,19 @@ import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { useLocation } from 'react-router-dom';
-
-import "./Navbar.scss";
+import { useLanguage } from '../../context/LanguageContext';
+import './Navbar.scss';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
+  const { language, toggleLanguage } = useLanguage();
   
+  const navItems = {
+    EN: ["Home", "Expertise", "Work", "Experience"],
+    FR: ["Accueil", "Expertise", "Projets", "Expérience"]
+  };
+
   const getHref = (item) => {
     const lowercaseItem = item.toLowerCase();
     
@@ -32,7 +38,7 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <ul className="app__navbar-links">
-        {["Home", "Expertise", "Work", "Experience"].map((item) => (
+        {navItems[language].map((item) => (
           <li key={`link-${item}`}>
             <a href={getHref(item)}>{item}</a>
           </li>
@@ -40,6 +46,9 @@ const Navbar = () => {
       </ul>
 
       <div className="app__navbar-social">
+        <button onClick={toggleLanguage} className="language-toggle">
+          {language === 'EN' ? 'EN' : 'FR'}
+        </button>
         <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
           <BsGithub />
         </a>
@@ -59,7 +68,7 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {["Home", "Expertise", "Work", "Experience"].map((item) => (
+              {navItems[language].map((item) => (
                 <li key={item}>
                   <a href={getHref(item)} onClick={() => setToggle(false)}>
                     {item}

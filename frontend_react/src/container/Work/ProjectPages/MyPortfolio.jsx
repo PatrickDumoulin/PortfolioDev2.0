@@ -1,10 +1,110 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AppWrap } from '../../../wrapper';
+import { useLanguage } from '../../../context/LanguageContext';
 import { images } from '../../../constants';
 import './MyPortfolio.scss';
 
+const translations = {
+  EN: {
+    title: ["My", "Portfolio"],
+    description: "A modern, responsive portfolio website built with React and Framer Motion. This project showcases my work, skills, and experience through an interactive and visually appealing interface. The design focuses on user experience while maintaining performance and accessibility.",
+    sections: {
+      features: {
+        title: "Key Features",
+        items: [
+          "Responsive Design",
+          "Smooth Animations",
+          "Project Showcase",
+          "Skills Visualization",
+          "Dynamic Content",
+          "Dark Theme",
+          "Performance Optimized"
+        ]
+      },
+      tech: {
+        title: "Technologies Used",
+        items: [
+          "React",
+          "Framer Motion",
+          "SCSS",
+          "JavaScript",
+          "React Router"
+        ]
+      },
+      skills: {
+        title: "Skills Developed",
+        items: [
+          "Frontend Development",
+          "UI/UX Design",
+          "Animation Implementation",
+          "Responsive Design",
+          "Performance Optimization",
+          "Component Architecture"
+        ]
+      },
+      duration: {
+        title: "Project Duration",
+        text: "2 Weeks (Personal Project)"
+      },
+      buttons: {
+        code: "View Code",
+        back: "Back"
+      }
+    }
+  },
+  FR: {
+    title: ["Mon", "Portfolio"],
+    description: "Un site portfolio moderne et réactif construit avec React et Framer Motion. Ce projet présente mon travail, mes compétences et mon expérience à travers une interface interactive et visuellement attrayante. Le design met l'accent sur l'expérience utilisateur tout en maintenant la performance et l'accessibilité.",
+    sections: {
+      features: {
+        title: "Fonctionnalités Clés",
+        items: [
+          "Design Réactif",
+          "Animations Fluides",
+          "Présentation des Projets",
+          "Visualisation des Compétences",
+          "Contenu Dynamique",
+          "Thème Sombre",
+          "Performance Optimisée"
+        ]
+      },
+      tech: {
+        title: "Technologies Utilisées",
+        items: [
+          "React",
+          "Framer Motion",
+          "SCSS",
+          "JavaScript",
+          "React Router"
+        ]
+      },
+      skills: {
+        title: "Compétences Développées",
+        items: [
+          "Développement Frontend",
+          "Design UI/UX",
+          "Implémentation d'Animations",
+          "Design Réactif",
+          "Optimisation des Performances",
+          "Architecture des Composants"
+        ]
+      },
+      duration: {
+        title: "Durée du Projet",
+        text: "2 Semaines (Projet Personnel)"
+      },
+      buttons: {
+        code: "Voir le Code",
+        back: "Retour"
+      }
+    }
+  }
+};
+
 const MyPortfolio = () => {
+  const { language } = useLanguage();
+  
   return (
     <div className="app__project">
       <motion.div
@@ -13,13 +113,16 @@ const MyPortfolio = () => {
         className="app__project-content"
       >
         <div className="app__project-header">
-          <h1 className="head-text">My Portfolio<span>.</span></h1>
+          <h1 className="head-text">
+            {translations[language].title[0]}{" "}
+            <span>{translations[language].title[1]}</span>
+          </h1>
         </div>
 
         <div className="app__project-main">
           <div className="app__project-info">
             <p className="p-text">
-              A modern, responsive portfolio website built with React and Framer Motion. This project showcases my work, skills, and experience through an interactive and visually appealing interface. The design focuses on user experience while maintaining performance and accessibility.
+              {translations[language].description}
             </p>
 
             <motion.div className="app__project-img">
@@ -33,52 +136,43 @@ const MyPortfolio = () => {
             </motion.div>
 
             <div className="app__project-features">
-              <h3>Key Features:</h3>
+              <h3>{translations[language].sections.features.title}:</h3>
               <ul>
-                <li>Responsive Design</li>
-                <li>Smooth Animations</li>
-                <li>Project Showcase</li>
-                <li>Skills Visualization</li>
-                <li>Dynamic Content</li>
-                <li>Dark Theme</li>
-                <li>Performance Optimized</li>
+                {translations[language].sections.features.items.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </div>
 
             <div className="app__project-tech">
-              <h3>Technologies Used:</h3>
+              <h3>{translations[language].sections.tech.title}:</h3>
               <div className="tech-stack">
-                <span>React</span>
-                <span>Framer Motion</span>
-                <span>SCSS</span>
-                <span>JavaScript</span>
-                <span>React Router</span>
+                {translations[language].sections.tech.items.map((item, index) => (
+                  <span key={index}>{item}</span>
+                ))}
               </div>
             </div>
 
             <div className="app__project-skills">
-              <h3>Skills Developed:</h3>
+              <h3>{translations[language].sections.skills.title}:</h3>
               <ul>
-                <li>Frontend Development</li>
-                <li>UI/UX Design</li>
-                <li>Animation Implementation</li>
-                <li>Responsive Design</li>
-                <li>Performance Optimization</li>
-                <li>Component Architecture</li>
+                {translations[language].sections.skills.items.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </div>
 
             <div className="app__project-duration">
-              <h3>Project Duration:</h3>
-              <p className="p-text">2 Weeks (Personal Project)</p>
+              <h3>{translations[language].sections.duration.title}:</h3>
+              <p className="p-text">{translations[language].sections.duration.text}</p>
             </div>
 
             <div className="app__project-buttons">
-              <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noreferrer" className="code-button">
-                View Code
+              <a href="https://github.com/PatrickDumoulin/PortfolioDev2.0.git" target="_blank" rel="noreferrer" className="code-button">
+                {translations[language].sections.buttons.code}
               </a>
               <a href="/" className="back-button">
-                Back
+                {translations[language].sections.buttons.back}
               </a>
             </div>
           </div>
