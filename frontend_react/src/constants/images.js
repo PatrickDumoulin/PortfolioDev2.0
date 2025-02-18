@@ -41,7 +41,9 @@ import DALLE_AI from '../assets/DALLE_AI.png';
 import DALLE_Cloud from '../assets/DALLE_Cloud.png';
 import DALLE_Creative from '../assets/DALLE_Creative.png';
 import DALLE_Game from '../assets/DALLE_Game.png';
+import DALLE_Mobile from '../assets/DALLE_Mobile.png';
 
+import Maphoto from '../assets/Maphoto.jpg';
 
 export default {
   email,
@@ -83,5 +85,6 @@ export default {
   DALLE_Cloud,
   DALLE_Creative,
   DALLE_Game,
-
-  };
+  Maphoto,
+  DALLE_Mobile,
+};

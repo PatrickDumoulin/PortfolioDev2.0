@@ -67,6 +67,17 @@ const abouts = [
     imgUrl: images.DALLE_Game
   },
   {
+    title: "Mobile Development",
+    description: "Experienced in cross-platform mobile app development using modern frameworks and tools. Skilled in creating responsive and native-like mobile applications.",
+    skills: [
+      "React Native",
+      "MAUI",
+      "Framer Motion",
+      "NativeWind",
+    ],
+    imgUrl: images.DALLE_Mobile
+  },
+  {
     title: "Creative Tools",
     description: "Proficient in various creative software tools for design, video editing, and 3D modeling. Experienced in creating engaging visual content and user interfaces.",
     skills: [
@@ -78,15 +89,15 @@ const abouts = [
       "Ableton Live"
     ],
     imgUrl: images.DALLE_Creative
-  }
+  },
+  
 ];
 
 const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I Know that <span>Good Design</span> <br /> means 
-        <span> Good Business</span>
+        <span className="white-text">My</span> <span>Expertise</span> <br />
       </h2>
 
       <div className="app__profiles">
