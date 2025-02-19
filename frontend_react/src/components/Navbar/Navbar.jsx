@@ -18,15 +18,18 @@ const Navbar = () => {
   };
 
   const getHref = (item) => {
-    const lowercaseItem = item.toLowerCase();
-    
     const sectionMap = {
       'home': 'home',
       'expertise': 'about',
       'work': 'work',
-      'experience': 'skills'
+      'experience': 'skills',
+      'accueil': 'home',
+      'expertise': 'about',
+      'projets': 'work',
+      'expérience': 'skills'
     };
 
+    const lowercaseItem = item.toLowerCase();
     const section = sectionMap[lowercaseItem];
     
     if (location.pathname !== '/') {
