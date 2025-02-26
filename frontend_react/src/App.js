@@ -16,9 +16,9 @@ const MainLayout = () => (
     <div className="app">
       <Navbar />
       <Header />
+      <Skills />
       <About />
       <Work />
-      <Skills />
       <Footer />
     </div>
   </LanguageProvider>

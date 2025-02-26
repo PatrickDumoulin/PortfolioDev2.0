@@ -233,47 +233,39 @@
   }
 
   .app__education-item {
+    width: 100%;
+    padding: 2rem;
     background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-5px);
-    }
-
-    .app__education-content {
-      h3 {
-        color: #8A7FFF;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .institution {
-        color: var(--white-color);
-        font-weight: 500;
-        margin-bottom: 0.3rem;
-      }
-
-      .period {
-        color: var(--gray-color);
-        margin-bottom: 1rem;
-      }
-
-      .description {
-        color: var(--lightGray-color);
-        line-height: 1.6;
-      }
-    }
-
-    .bold-text {
+    h3 {
       color: #8A7FFF;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
-      font-weight: 700;
+      text-align: left;
+    }
+
+    .institution {
+      color: var(--white-color);
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      text-align: left;
+    }
+
+    .period {
+      color: var(--gray-color);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .description {
+      color: var(--lightGray-color);
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: left;
     }
   }
 

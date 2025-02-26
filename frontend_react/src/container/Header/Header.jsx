@@ -19,24 +19,23 @@ const scaleVariants = {
 const translations = {
   EN: {
     title: "LANGUAGES & FRAMEWORKS",
-    commits: "GITHUB COMMITS",
-    projects: "FINISHED PROJECTS",
+    experience: "YEARS OF EXPERIENCE",
     role: "FullStack Web Developer",
-    bio: "I'm Patrick, a passionate developer based in Québec City with a deep love for creating innovative applications and games. In addition, I'm a musician and enjoy exploring creative avenues like producing music professionally."
+    founder: "Developer & Founder of 2 SaaS in AI & Automation",
+    bio: "I'm Patrick, a passionate full-stack developer & SaaS founder based in Québec City. I specialize in building AI-powered applications, automation systems, and high-converting funnels. My expertise spans web development, AI integration, and business automation."
   },
   FR: {
     title: "LANGAGES & FRAMEWORKS",
-    commits: "COMMITS GITHUB",
-    projects: "PROJETS TERMINÉS",
+    experience: "ANNÉES D'EXPÉRIENCE",
     role: "Développeur Web FullStack",
-    bio: "Je suis Patrick, un développeur passionné basé à Québec, avec un profond intérêt pour la création d'applications et de jeux innovants. De plus, je suis musicien et j'aime explorer des avenues créatives comme la production musicale professionnelle."
+    founder: "Développeur & Fondateur de 2 SaaS en IA & Automation",
+    bio: "Je suis Patrick, un développeur full-stack passionné & fondateur de SaaS basé à Québec. Je me spécialise dans la création d'applications propulsées par l'IA, de systèmes d'automation et de tunnels de conversion performants. Mon expertise couvre le développement web, l'intégration d'IA et l'automatisation d'entreprise."
   }
 };
 
 const stats = [
   { titleKey: "title", value: 10, suffix: "+" },
-  { titleKey: "commits", value: 569, suffix: "" },
-  { titleKey: "projects", value: 16, suffix: "+" },
+  { titleKey: "experience", value: 3, suffix: "+" }
 ];
 
 const Counter = ({ value, suffix, title }) => {

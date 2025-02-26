@@ -18,6 +18,18 @@ const translations = {
           institution: "Cégep Limoilou",
           period: "2022-2024",
           description: "1800-hour intensive training focused on secure web and mobile application development. Learning programming best practices, security principles, and modern web development technologies."
+        },
+        {
+          name: "IT Support Training",
+          institution: "COLLEGE MARIE-ROLLET",
+          period: "2021-2022",
+          description: "IT troubleshooting and network management. Implementation of IT solutions and network infrastructure."
+        },
+        {
+          name: "AEC Business Launch",
+          institution: "Centre Maurice-Barbeau",
+          period: "2016",
+          description: "Business launch training focused on entrepreneurship fundamentals and business development strategies."
         }
       ]
     },
@@ -25,10 +37,28 @@ const translations = {
       title: "Experience",
       items: [
         {
-          name: "ACEF De Québec",
-          role: "Full Stack Developer (Contract)",
+          name: "Lead Developer",
+          role: "Ascend Funnel AI",
+          period: "2024 - Present",
+          description: "Design and development of a SaaS automation platform for sales funnels targeting business coaches. Implementation of AI solutions and marketing automation to optimize prospect conversion. Technologies: React, Next.js, WordPress, Node.js, OpenAI API, Zapier."
+        },
+        {
+          name: "Software Developer",
+          role: "ACEF de Québec (Contract)",
           period: "2024",
-          description: "Development of a complete web application for managing budget consultations. Technologies used: ASP.NET Core, React, SQL Server.",
+          description: "Development of a secure web application replacing an Excel-based system. Design of a client and intervention management system. Technologies: .NET Core, ASP.NET MVC, C#, SQL Server."
+        },
+        {
+          name: "Web Developer",
+          role: "Freelance",
+          period: "2022 - Present",
+          description: "Creation of optimized websites for automation and SEO (WordPress, React, Next.js). Integration of AI solutions and automated sales funnels. Collaboration with entrepreneurs and professionals to improve their digital presence."
+        },
+        {
+          name: "Co-Founder & Technical Manager",
+          role: "Productions BRB",
+          period: "2019 - 2022",
+          description: "Creation and management of an event company specializing in mobile shows and artist management. Organization and management of 500+ events for clients across Quebec. Implementation of digital solutions for event management and reservations. Management of social media and digital communication to optimize visibility and engagement. Development of internal tools for partner management and operations optimization. Management of contracts, commercial prospecting and process optimization."
         }
       ]
     }
@@ -43,6 +73,18 @@ const translations = {
           institution: "Cégep Limoilou",
           period: "2022-2024",
           description: "Formation intensive de 1800 heures axée sur le développement d'applications web et mobiles sécurisées. Apprentissage des meilleures pratiques de programmation, des principes de sécurité et des technologies de développement web modernes."
+        },
+        {
+          name: "Formation en Soutien Informatique",
+          institution: "COLLEGE MARIE-ROLLET",
+          period: "2021-2022",
+          description: "Résolution de problématiques informatiques et gestion de réseaux. Mise en place de solutions informatiques et d'infrastructures réseau."
+        },
+        {
+          name: "AEC Lancement d'Entreprise",
+          institution: "Centre Maurice-Barbeau",
+          period: "2016",
+          description: "Formation en lancement d'entreprise axée sur les fondamentaux de l'entrepreneuriat et les stratégies de développement d'entreprise."
         }
       ]
     },
@@ -50,10 +92,28 @@ const translations = {
       title: "Expérience",
       items: [
         {
-          name: "ACEF De Québec",
-          role: "Développeur Full Stack (Contrat)",
+          name: "Développeur Principal",
+          role: "Ascend Funnel AI",
+          period: "2024 - Présent",
+          description: "Conception et développement d'un SaaS d'automatisation des funnels de vente pour les coachs business. Implémentation d'une solution AI et automation marketing pour optimiser la conversion des prospects. Technologies : React, Next.js, WordPress, Node.js, OpenAI API, Zapier."
+        },
+        {
+          name: "Développeur Logiciel",
+          role: "ACEF de Québec (Contrat)",
           period: "2024",
-          description: "Développement d'une application web complète pour la gestion des consultations budgétaires. Technologies utilisées : ASP.NET Core, React, SQL Server.",
+          description: "Développement d'une application web sécurisée remplaçant un système Excel. Conception d'un système de gestion de clients et suivi des interventions. Technologies : .NET Core, ASP.NET MVC, C#, SQL Server."
+        },
+        {
+          name: "Développeur Web",
+          role: "Freelance",
+          period: "2022 - Présent",
+          description: "Création de sites web optimisés pour l'automatisation et le SEO (WordPress, React, Next.js). Intégration de solutions AI et funnels de vente automatisés. Collaboration avec entrepreneurs et professionnels pour améliorer leur présence digitale."
+        },
+        {
+          name: "Co-Fondateur & Gestionnaire Technique",
+          role: "Productions BRB",
+          period: "2019 - 2022",
+          description: "Création et gestion d'une entreprise événementielle spécialisée dans l'organisation de spectacles mobiles et la gestion d'artistes. Organisation et gestion de 500+ événements pour des clients à travers le Québec. Mise en place de solutions digitales pour la gestion des événements et des réservations. Gestion des médias sociaux et de la communication digitale pour optimiser la visibilité et l'engagement. Développement d'outils internes pour la gestion des partenaires et l'optimisation des opérations. Gestion des contrats, prospection commerciale et optimisation des processus internes."
         }
       ]
     }
