@@ -57,7 +57,7 @@ const translations = {
         {
           name: "Co-Founder & Technical Manager",
           role: "Productions BRB",
-          period: "2019 - 2022",
+          period: "2019 - 2023",
           description: "Creation and management of an event company specializing in mobile shows and artist management. Organization and management of 500+ events for clients across Quebec. Implementation of digital solutions for event management and reservations. Management of social media and digital communication to optimize visibility and engagement. Development of internal tools for partner management and operations optimization. Management of contracts, commercial prospecting and process optimization."
         }
       ]
@@ -112,7 +112,7 @@ const translations = {
         {
           name: "Co-Fondateur & Gestionnaire Technique",
           role: "Productions BRB",
-          period: "2019 - 2022",
+          period: "2019 - 2023",
           description: "Création et gestion d'une entreprise événementielle spécialisée dans l'organisation de spectacles mobiles et la gestion d'artistes. Organisation et gestion de 500+ événements pour des clients à travers le Québec. Mise en place de solutions digitales pour la gestion des événements et des réservations. Gestion des médias sociaux et de la communication digitale pour optimiser la visibilité et l'engagement. Développement d'outils internes pour la gestion des partenaires et l'optimisation des opérations. Gestion des contrats, prospection commerciale et optimisation des processus internes."
         }
       ]
