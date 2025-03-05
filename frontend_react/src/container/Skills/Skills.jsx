@@ -37,10 +37,10 @@ const translations = {
       title: "Experience",
       items: [
         {
-          name: "Lead Developer",
-          role: "Ascend Funnel AI",
+          name: "AI Integration Expert & Founder",
+          role: "Sonoria AI",
           period: "2024 - Present",
-          description: "Design and development of a SaaS automation platform for sales funnels targeting business coaches. Implementation of AI solutions and marketing automation to optimize prospect conversion. Technologies: React, Next.js, WordPress, Node.js, OpenAI API, Zapier."
+          description: "Development and integration of an AI Voice Bot for call automation and customer management in auto repair shops. Implementation of AI-powered chatbots & voice bots using OpenAI API, ElevenLabs, and Twilio. Business process automation through n8n, Zapier, and no-code/low-code integrations."
         },
         {
           name: "Software Developer",
@@ -92,10 +92,10 @@ const translations = {
       title: "Expérience",
       items: [
         {
-          name: "Développeur Principal",
-          role: "Ascend Funnel AI",
+          name: "Expert en Intégration AI & Fondateur ",
+          role: "Sonoria AI",
           period: "2024 - Présent",
-          description: "Conception et développement d'un SaaS d'automatisation des funnels de vente pour les coachs business. Implémentation d'une solution AI et automation marketing pour optimiser la conversion des prospects. Technologies : React, Next.js, WordPress, Node.js, OpenAI API, Zapier."
+          description: "Développement et intégration d’un AI Voice Bot pour l'automatisation des appels et la gestion client dans les garages. Mise en place de solutions chatbots & voice bots AI avec OpenAI API, ElevenLabs et Twilio. Automatisation des processus métier via n8n, Zapier et intégrations no-code/low-code."
         },
         {
           name: "Développeur Logiciel",

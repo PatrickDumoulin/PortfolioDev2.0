@@ -50,7 +50,7 @@ const Navbar = () => {
 
       <div className="app__navbar-social">
         <button onClick={toggleLanguage} className="language-toggle">
-          {language === 'EN' ? 'EN' : 'FR'}
+          {language === 'EN' ? 'FR' : 'EN'}
         </button>
         <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
           <BsGithub />

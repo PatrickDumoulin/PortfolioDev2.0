@@ -20,16 +20,17 @@ const translations = {
   EN: {
     title: "LANGUAGES & FRAMEWORKS",
     experience: "YEARS OF EXPERIENCE",
-    role: "FullStack Web Developer",
+    role: "AI Integration Expert & Fullstack Developer",
     founder: "Developer & Founder of 2 SaaS in AI & Automation",
-    bio: "I'm Patrick, a passionate full-stack developer & SaaS founder based in Québec City. I specialize in building AI-powered applications, automation systems, and high-converting funnels. My expertise spans web development, AI integration, and business automation."
+    bio: "With more than 3 years of experience in software development and AI integration, I specialize in building intelligent automated solutions: voice bots, chatbots, and AI-driven automation. I help businesses integrate and leverage AI to optimize their processes. In parallel, I have strong expertise in fullstack development with .NET & React. My approach combines technology and business strategy, with a strong focus on performance and user experience."
   },
   FR: {
     title: "LANGAGES & FRAMEWORKS",
     experience: "ANNÉES D'EXPÉRIENCE",
-    role: "Développeur Web FullStack",
+    role: "Expert en Intégration AI & Développeur Fullstack",
     founder: "Développeur & Fondateur de 2 SaaS en IA & Automation",
-    bio: "Je suis Patrick, un développeur full-stack passionné & fondateur de SaaS basé à Québec. Je me spécialise dans la création d'applications propulsées par l'IA, de systèmes d'automation et de tunnels de conversion performants. Mon expertise couvre le développement web, l'intégration d'IA et l'automatisation d'entreprise."
+    bio: "Avec plus de 3 ans d’expérience en développement logiciel et en intégration AI, je me spécialise dans la création de solutions automatisées intelligentes : voice bots, chatbots et automatisations AI. j’aide les entreprises à intégrer et exploiter l’AI pour optimiser leurs processus. En parallèle, je possède une solide expertise en développement fullstack .NET & React. Mon approche combine technologie et stratégie business, avec un fort focus sur la performance et l’expérience utilisateur"
+
   }
 };
 
