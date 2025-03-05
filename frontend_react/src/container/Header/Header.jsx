@@ -29,13 +29,12 @@ const translations = {
     experience: "ANNÉES D'EXPÉRIENCE",
     role: "Expert en Intégration AI & Développeur Fullstack",
     founder: "Développeur & Fondateur de 2 SaaS en IA & Automation",
-    bio: "Avec plus de 3 ans d’expérience en développement logiciel et en intégration AI, je me spécialise dans la création de solutions automatisées intelligentes : voice bots, chatbots et automatisations AI. j’aide les entreprises à intégrer et exploiter l’AI pour optimiser leurs processus. En parallèle, je possède une solide expertise en développement fullstack .NET & React. Mon approche combine technologie et stratégie business, avec un fort focus sur la performance et l’expérience utilisateur"
+    bio: "Avec plus de 3 ans d'expérience en développement logiciel et en intégration AI, je me spécialise dans la création de solutions automatisées intelligentes : voice bots, chatbots et automatisations AI. j'aide les entreprises à intégrer et exploiter l'AI pour optimiser leurs processus. En parallèle, je possède une solide expertise en développement fullstack .NET & React. Mon approche combine technologie et stratégie business, avec un fort focus sur la performance et l'expérience utilisateur"
 
   }
 };
 
 const stats = [
-  { titleKey: "title", value: 10, suffix: "+" },
   { titleKey: "experience", value: 3, suffix: "+" }
 ];
 
@@ -73,48 +72,52 @@ const Header = () => {
   return (
     <div className="app__header app__flex">
       <div className="app__header-content">
-        <motion.div
-          whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-          transition={{ duration: 0.5 }}
-          className="app__header-info"
-        >
-          <div className="app__header-badge">
-            <div className="badge-cmp app__flex">
-              <div style={{ marginLeft: 20 }}>
-                <h1 className="head-text">Patrick Dumoulin</h1>
-              </div>
+        <div className="app__header-main">
+          <motion.div
+            whileInView={{ x: [-50, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.5 }}
+            className="app__header-left"
+          >
+            <div className="badge-cmp">
+              <h1 className="head-text">Patrick Dumoulin</h1>
             </div>
-            <div className="tag-cmp app__flex">
+            <div className="tag-cmp">
               <p className="p-text">{translations[language].role}</p>
             </div>
+          </motion.div>
 
+          <motion.div
+            whileInView={{ x: [50, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.5 }}
+            className="app__header-right"
+          >
             <div className="profile-img">
               <img src={images.Maphoto} alt="profile" />
             </div>
+          </motion.div>
+        </div>
 
-            <motion.div
-              whileInView={{ y: [100, 0], opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="app__header-stats"
-            >
-              {stats.map((stat, index) => (
-                <Counter
-                  key={index}
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  title={translations[language][stat.titleKey]}
-                />
-              ))}
-            </motion.div>
+        <motion.div
+          whileInView={{ y: [30, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="app__header-stats"
+        >
+          {stats.map((stat, index) => (
+            <Counter
+              key={index}
+              value={stat.value}
+              suffix={stat.suffix}
+              title={translations[language][stat.titleKey]}
+            />
+          ))}
+        </motion.div>
 
-            <motion.div
-              variant={scaleVariants}
-              whileInView={{ opacity: [0, 1] }}
-              className="app__header-bio"
-            >
-              <p>{translations[language].bio}</p>
-            </motion.div>
-          </div>
+        <motion.div
+          whileInView={{ y: [30, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="app__header-bio"
+        >
+          <p>{translations[language].bio}</p>
         </motion.div>
       </div>
     </div>
