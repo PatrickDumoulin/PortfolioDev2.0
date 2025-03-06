@@ -52,10 +52,10 @@ const Navbar = () => {
         <button onClick={toggleLanguage} className="language-toggle">
           {language === 'EN' ? 'FR' : 'EN'}
         </button>
-        <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
+        <a href="https://github.com/PatrickDumoulin" target="_blank" rel="noreferrer">
           <BsGithub />
         </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer">
+        <a href="https://linkedin.com/in/patrick-dumoulin-37274a2aa" target="_blank" rel="noreferrer">
           <BsLinkedin />
         </a>
       </div>
