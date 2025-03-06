@@ -13,8 +13,8 @@ const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
   
   const navItems = {
-    EN: ["Home", "Expertise", "Work", "Experience"],
-    FR: ["Accueil", "Expertise", "Projets", "Expérience"]
+    EN: ["Home", "Experience", "Expertise", "Work" ],
+    FR: ["Accueil", "Expérience", "Expertise", "Projets"]
   };
 
   const getHref = (item) => {

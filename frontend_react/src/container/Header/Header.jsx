@@ -29,7 +29,7 @@ const translations = {
     experience: "ANNÉES D'EXPÉRIENCE",
     role: "Expert en Intégration AI & Développeur Fullstack",
     founder: "Développeur & Fondateur de 2 SaaS en IA & Automation",
-    bio: "Avec plus de 3 ans d'expérience en développement logiciel et en intégration AI, je me spécialise dans la création de solutions automatisées intelligentes : voice bots, chatbots et automatisations AI. j'aide les entreprises à intégrer et exploiter l'AI pour optimiser leurs processus. En parallèle, je possède une solide expertise en développement fullstack .NET & React. Mon approche combine technologie et stratégie business, avec un fort focus sur la performance et l'expérience utilisateur"
+    bio: "Avec plus de 3 ans d'expérience en développement logiciel et en intégration AI, je me spécialise dans la création de solutions automatisées intelligentes : voice bots, chatbots et automatisations AI. J'aide les entreprises à intégrer et exploiter l'AI pour optimiser leurs processus. En parallèle, je possède une solide expertise en développement fullstack .NET & React. Mon approche combine technologie et stratégie business, avec un fort focus sur la performance et l'expérience utilisateur"
 
   }
 };
@@ -44,7 +44,7 @@ const Counter = ({ value, suffix, title }) => {
   useEffect(() => {
     let start = 0;
     const end = parseInt(value.toString().substring(0, 3));
-    const incrementTime = 2000 / end;
+    const incrementTime = 1000 / end;
 
     const timer = setInterval(() => {
       start += 1;
