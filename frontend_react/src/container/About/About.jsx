@@ -18,8 +18,8 @@ const translations = {
         description: "Skilled in modern frontend frameworks and libraries, with a focus on creating responsive and interactive user interfaces. Strong foundation in TypeScript and JavaScript, with expertise in various CSS frameworks."
       },
       ai: {
-        title: "AI",
-        description: "Experienced in implementing AI solutions using various tools and frameworks. Proficient in working with large language models and AI-assisted development tools."
+        title: "Artificial Intelligence & Automation",
+        description: "Specialized in implementing AI solutions and automation systems. Experienced in developing chatbots, voice assistants, and process automation using cutting-edge AI technologies and tools."
       },
       cloud: {
         title: "Cloud & DevOps",
@@ -51,8 +51,8 @@ const translations = {
         description: "Spécialisé dans les frameworks et bibliothèques frontend modernes, avec un accent sur la création d'interfaces utilisateur réactives et interactives. Solide base en TypeScript et JavaScript, avec expertise dans divers frameworks CSS."
       },
       ai: {
-        title: "IA",
-        description: "Expérimenté dans l'implémentation de solutions d'IA utilisant divers outils et frameworks. Compétent dans le travail avec les modèles de langage et les outils de développement assistés par l'IA."
+        title: "Intelligence Artificielle & Automation",
+        description: "Spécialisé dans l'implémentation de solutions d'IA et de systèmes d'automatisation. Expérimenté dans le développement de chatbots, assistants vocaux et l'automatisation des processus utilisant les technologies et outils d'IA de pointe."
       },
       cloud: {
         title: "Cloud & DevOps",
@@ -76,6 +76,42 @@ const translations = {
 
 const abouts = [
   {
+    key: "ai",
+    categories: [
+      {
+        nameEN: "AI Chatbots & Voice Bots",
+        nameFR: "Chatbots & Voice Bots AI",
+        skills: ["OpenAI GPT", "ElevenLabs", "Twilio", "Botpress", "ManyChat"]
+      },
+      {
+        nameEN: "No-Code & Low-Code Automation",
+        nameFR: "Automatisation No-Code & Low-Code",
+        skills: ["n8n", "Zapier", "Make", "Uncanny Automator"]
+      },
+      {
+        nameEN: "AI & Business Process Automation",
+        nameFR: "AI & Automatisation de Processus Métier",
+        skills: ["OpenAI API", "Claude 3.5"]
+      },
+      {
+        nameEN: "AI Content Generation",
+        nameFR: "Génération de Contenu AI",
+        skills: ["MidJourney", "DALL·E", "Stable Diffusion"]
+      },
+      {
+        nameEN: "Machine Learning & Data AI",
+        nameFR: "Machine Learning & Data AI",
+        skills: ["ML.Net"]
+      },
+      {
+        nameEN: "AI Development & Optimization Tools",
+        nameFR: "Outils d'Optimisation & Développement AI",
+        skills: ["Cursor", "Auto-GPT", "ChatGPT Plugins"]
+      }
+    ],
+    imgUrl: images.DALLE_AI
+  },
+  {
     key: "backend",
     skills: ["C#", "ASP.NET Core", "Entity Framework Core", "SQL Server, MySQL", "REST APIs", "Node.js"],
     imgUrl: images.DALLE_BackEnd
@@ -85,11 +121,7 @@ const abouts = [
     skills: ["React, Next.js", "TypeScript, JavaScript", "HTML5, CSS3, SASS", "Tailwind CSS, Bootstrap", "Angular, Vue.js", "WordPress, Elementor"],
     imgUrl: images.DALLE_FrontEnd
   },
-  {
-    key: "ai",
-    skills: ["ML.Net", "GPT-4, Claude 3.5 Sonnet", "Cursor", "MidJourney"],
-    imgUrl: images.DALLE_AI
-  },
+  
   {
     key: "cloud",
     skills: ["Azure, DevOps", "CI/CD Pipelines", "YAML, Docker", "Git, GitHub", "Vercel, Firebase, Appwrite", "Agile, Jira"],
@@ -130,6 +162,7 @@ const About = () => {
             transition={{ duration: 0.5, type: "tween" }}
             className="app__profile-item"
             key={about.key + index}
+            data-category={about.key}
           >
             <img src={about.imgUrl} alt={translations[language].sections[about.key].title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
@@ -139,19 +172,40 @@ const About = () => {
               {translations[language].sections[about.key].description}
             </p>
             <div className="skills-container">
-              <ul className="skills-list">
-                {about.skills.map((skill, skillIndex) => (
-                  <motion.li
-                    key={skillIndex}
-                    className="skill-item"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="skill-dot"></span>
-                    {skill}
-                  </motion.li>
-                ))}
-              </ul>
+              {about.key === "ai" ? (
+                about.categories.map((category, catIndex) => (
+                  <div key={catIndex} className="skill-category">
+                    <h3 className="category-title">
+                      {language === 'EN' ? category.nameEN : category.nameFR}
+                    </h3>
+                    <ul className="skills-list">
+                      {category.skills.map((skill, skillIndex) => (
+                        <motion.li
+                          key={skillIndex}
+                          className="skill-item"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {skill}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                ))
+              ) : (
+                <ul className="skills-list">
+                  {about.skills.map((skill, skillIndex) => (
+                    <motion.li
+                      key={skillIndex}
+                      className="skill-item"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {skill}
+                    </motion.li>
+                  ))}
+                </ul>
+              )}
             </div>
           </motion.div>
         ))}
