@@ -97,6 +97,10 @@
   padding: 1.5rem 2rem;
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
   
   p {
     font-size: 1.1rem;
@@ -106,6 +110,7 @@
     font-weight: 500;
     margin: 0;
     line-height: 1.4;
+    text-align: center;
   }
 }
 
