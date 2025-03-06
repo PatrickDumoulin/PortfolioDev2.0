@@ -158,7 +158,6 @@ const About = () => {
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: [0, 1] }}
-            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5, type: "tween" }}
             className="app__profile-item"
             key={about.key + index}
@@ -183,7 +182,6 @@ const About = () => {
                         <motion.li
                           key={skillIndex}
                           className="skill-item"
-                          whileHover={{ scale: 1.1 }}
                           transition={{ duration: 0.2 }}
                         >
                           {skill}
@@ -198,7 +196,6 @@ const About = () => {
                     <motion.li
                       key={skillIndex}
                       className="skill-item"
-                      whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.2 }}
                     >
                       {skill}
